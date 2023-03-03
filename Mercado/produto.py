@@ -3,17 +3,17 @@ class produto:
     def __init__(self, nome, descricao, valor, unidade):
         print("Criando produto...")
         print("Adicionado ao carrinho...")
-        self.__nome = nome
-        self.__descricao = descricao
-        self.__valor = valor
-        self.__unidade = unidade
+        self._nome = nome
+        self._descricao = descricao
+        self._valor = valor
+        self._unidade = unidade
         
 
     def __radd__(self, other):
         if isinstance(other, produto):
-            return self.__unidade + other.__unidade
+            return self._unidade + other._unidade
         else:
-            return self.__unidade + other
+            return self._unidade + other
 
     @property
     def produto(self):
@@ -21,15 +21,19 @@ class produto:
 
     @property
     def nome(self):
-        return self.__nome
+        return self.nome
 
     @property
     def descricao(self):
-        return self.__descricao
+        return self._descricao
 
     @property
     def valor(self):
-        return self.__valor
+        return self._valor
+    
+    @property
+    def unidade(self):
+        return self._unidade
     
         
     
